@@ -18,7 +18,7 @@ public class CoinArrangement {
 		if (n < 0)
 			return 0;
 		
-		int newcoin = 0;;
+		int newcoin = 0;
 		
 		if (coin == 25)
 			newcoin = 10;
