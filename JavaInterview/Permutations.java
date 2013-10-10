@@ -1,4 +1,4 @@
-package InterviewQuestions;
+package JavaInterview;
 
 import java.util.ArrayList;
 
