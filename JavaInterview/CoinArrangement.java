@@ -10,7 +10,7 @@ public class CoinArrangement {
 	 * represent n cents.
 	 * 
 	 * Time complexity: O(n)
-	 * *
+	 * 
 	 */
 	
 	static int fcoins(int n, int coin) {
