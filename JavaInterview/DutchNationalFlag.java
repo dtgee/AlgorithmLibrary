@@ -10,13 +10,13 @@ public class DutchNationalFlag {
 	 * 
 	 */
 	public static void main(String[] args) {
-		
+
 		int[] list = { 1, 2, 2, 1, 3, 2, 3, 1, 2 };
 
 		int lo = 0;
 		int hi = list.length-1;
 		int counter = 0;
-		
+
 		// only need to go up to high
 		while (counter <= hi) {
 			int e = list[counter];
@@ -37,7 +37,7 @@ public class DutchNationalFlag {
 				counter++;
 			}
 		}
-		
+
 		String str = "";
 		for (int i : list)
 			str += i + " ";
