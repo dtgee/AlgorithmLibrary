@@ -1,4 +1,0 @@
-
-def random():
-  print 'bored'
-  
