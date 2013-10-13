@@ -71,26 +71,4 @@ public class MergeSort {
         while (j <= high)
             testArr[k++] = helper[j++];
     }
-
-    /*
-     * LEGACY SORT - IT ACTUALLY RETURNS AN ARRAY public static int[]
-     * mergeSort(int[] array, int low, int high) { if (low < high) { int middle
-     * = (low + high) / 2; int[] leftSide = mergeSort(array, low, middle); int[]
-     * rightSide = mergeSort(array, middle + 1, high); return merge(leftSide,
-     * rightSide); } return Arrays.copyOfRange(array, low, low + 1); }
-     * 
-     * public static int[] merge(int[] leftSide, int[] rightSide) { int
-     * firstPointer = 0; int secondPointer = 0; int[] returnArr = new
-     * int[leftSide.length + rightSide.length]; int position = 0;
-     * 
-     * while (firstPointer < leftSide.length && secondPointer <
-     * rightSide.length) { if (leftSide[firstPointer] >
-     * rightSide[secondPointer]) { returnArr[position] = leftSide[firstPointer];
-     * firstPointer++; } else { returnArr[position] = rightSide[secondPointer];
-     * secondPointer++; } position++; } while (firstPointer < leftSide.length) {
-     * returnArr[position] = leftSide[firstPointer]; firstPointer++; position++;
-     * } while (secondPointer < rightSide.length) { returnArr[position] =
-     * rightSide[secondPointer]; secondPointer++; position++; } return
-     * returnArr; }
-     */
 }
