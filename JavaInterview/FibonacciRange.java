@@ -12,34 +12,43 @@ public class FibonacciRange {
      */
     
     static boolean isfib(int num) {
-        /*  */
+        /* This solution is naive. We iterate the radix sizes
+         * for the fibonacci numbers. A radix=1 means we
+         * are checking if 1+1=2 in 112, a radix=2 means
+         * we are checking if 12+12=13 in 121213.  */
         String numstr = Integer.toString(num);
         
         if (numstr.length() < 3)
             return false;
         
-        char[] arr = numstr.toCharArray();
-        for (int radix=1; radix<(numstr.length()/3); radix++) {
-            String third = null;
-            String second = null;
-            String current;
-            for (int i=0; (i+radix-1) < numstr.length(); i++) {
+        for (int radix=1; radix<=(numstr.length()/3); radix++) {
+            
+            String third = numstr.substring(0, 0+radix);
+            String second = numstr.substring(0+(radix), radix*2);
+            String current = "";
+            boolean passed = true;
+            
+            for (int i=(radix*2); (i+radix-1) < numstr.length(); i++) { 
                 String chunk = numstr.substring(i, i+radix);
-                if (i == 0) {
-                    third = chunk;
-                    continue;
+                current = chunk;
+                System.out.println("cur, second, third, radix "+
+                        current+" "+second+" "+third+" "+radix);
+                if ((Integer.parseInt(third) + Integer.parseInt(second)) 
+                        != Integer.parseInt(current)) {
+                    passed = false;
+                    break;
                 }
-                else if (i == 1) {
-                    second = chunk;
-                    continue;
-                }
-                    
+                third = second;
+                second = current;
+            }
+            if (passed) {
+                return true;
             }
         }
-        
+        return false;
     }
     
     public static void main(String[] args) {
-        
+        System.out.println(isfib(91019));
     }
 }
