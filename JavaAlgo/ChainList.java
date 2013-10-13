@@ -3,25 +3,7 @@ package JavaAlgo;
 //Name: Lucas Ou-Yang     ID: 27404511
 
 // ChainList.java
-//
-// Written by Norman Jacobson, March 2006 for the ICS 23 lab
-// Searching for a Better Way, along the lines of SkipList.java,
-//	written by Alex Thornton, Summer, 2005.
-// Minor revisions to comments, November 2006
-// Revised to use ZipCodeGroup and PhoneGroup classes, to parallel
-//  Proxmap, March 2010, by N. Jacobson
-// Minor edits, June 2010, by N. Jacobson
-// A few parameter types were the wrong ones; problem fixed, May 2011,
-//  by N. Jacobson
-// Simplified a couple of headers and cleaned up comments, June 2011, 
-//  by N. Jacobson
-
-// Below is a skeleton of a ChainList class where each key (zip code) is an int
-// and each value (a list of phone groups) is an ArrayList<ZipcodeGroup>.
-
-// Signatures for methods to complete the required work are included;
-// leave the public signatures as they are. You may add, change,
-// or delete any private methods, fields and/or inner classes you see fit.
+// Skeleton written by Norman Jacobson, March 2006
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,21 +16,6 @@ public class ChainList {
     private Scanner mainScanner;
     private AbstractMapKey mapKey;
 
-    // ChainList(): Builds a chain list from the contents
-    // of the master file masterFileName (with the help of the buildList()
-    // method).
-    //
-    // See the lab write-up for details on the master file format.
-    //
-    // The chain list is an ArrayList<Chain>. Chain, a private inner class,
-    // is a singly-linked list with ZipCodeGroup references as the data field.
-    // A ZipcodeGroup consists of a zip code, the key, and an ArrayList
-    // of PhoneGroup references. A Phonegroup is a class that defines
-    // a phone group, an area code-prefix pair. (See the files ZipcodeGroup.java
-    // and PhoneGroup.java for more information on these classes.)
-
-    // masterFileName line: ###_###_##### (area code - phone prefix - zip code
-    // (size varies))
     public ChainList(AbstractMapKey mapKeyToUse, String masterFileName)
             throws IOException {
         this.mainScanner = new Scanner(new File(masterFileName));
