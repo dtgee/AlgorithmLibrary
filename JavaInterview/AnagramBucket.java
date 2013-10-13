@@ -52,23 +52,22 @@ public class AnagramBucket {
 	}
 	
 	static void anagrambuckets(List<String> input) {
-		HashMap<Integer, List<String>> map = 
-				new HashMap<Integer, List<String>>();
+		HashMap<String, List<String>> map = 
+				new HashMap<String, List<String>>();
 		
 		for (int i=0; i<input.size(); i++) {
 			String srtedstr = sortstr(input.get(i));
-			int code = srtedstr.hashCode();
-			if (map.containsKey(code)) {
-				map.get(code).add(input.get(i));
+			if (map.containsKey(srtedstr)) {
+				map.get(srtedstr).add(input.get(i));
 			}
 			else {
 				List<String> z = new ArrayList<String>();
 				z.add(input.get(i));
-				map.put(code, z);
+				map.put(srtedstr, z);
 			}
 		}
 		
-		for (Map.Entry<Integer, List<String>> entry : map.entrySet()) {
+		for (Map.Entry<String, List<String>> entry : map.entrySet()) {
 			System.out.println("Key " + entry.getKey() + 
 				" bucket: " + entry.getValue().toString());
 		}
