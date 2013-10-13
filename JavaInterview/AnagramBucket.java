@@ -25,17 +25,17 @@ public class AnagramBucket {
 		sortstr(chararr, 0, str.length()-1);
 		return new String(chararr);
 	}
-	
+
 	static void sortstr(char[] arrchar, int start, int end) {
 		/* inplace quicksort, car=>acr */
 		if (start > end)
 			return;
-		
+
 		int piv = arrchar[end];
 		int lo = start;
 		int hi = end;
 		while (lo <= hi) {
-			while (arrchar[lo] < piv)
+		    while (arrchar[lo] < piv)
 				lo += 1;
 			while (arrchar[hi] > piv)
 				hi -= 1;
@@ -72,7 +72,7 @@ public class AnagramBucket {
 				" bucket: " + entry.getValue().toString());
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		List<String> input = new ArrayList<String>();
 		input.add("star");
