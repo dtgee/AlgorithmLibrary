@@ -1,7 +1,6 @@
 package JavaInterview;
 
 public class CoinArrangement {
-
     /*
      * Given an infinite amount of quarters, dimes, nickels, and pennies, write
      * code to calculate # of ways to represent n cents.
@@ -10,7 +9,6 @@ public class CoinArrangement {
      */
 
     static int fcoins(int n, int coin) {
-
         if (n < 0)
             return 0;
 
@@ -25,9 +23,7 @@ public class CoinArrangement {
         else
             return 1;
 
-        /*
-         * How many current coins can we fit into n? Start from 0
-         */
+        /* How many current coins can we fit into n? Start from 0 */
         int combos = 0;
 
         for (int i = 0; i * coin <= n; i++) {

@@ -15,7 +15,7 @@ public class FibonacciRange {
         /* This solution is naive. We iterate the radix sizes
          * for the fibonacci numbers. A radix=1 means we
          * are checking if 1+1=2 in 112, a radix=2 means
-         * we are checking if 12+12=13 in 121213.  */
+         * we are checking if 12+12=13 in 121213. */
         String numstr = Integer.toString(num);
         
         if (numstr.length() < 3)
