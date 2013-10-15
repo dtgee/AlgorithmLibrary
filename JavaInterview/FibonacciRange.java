@@ -11,6 +11,10 @@ public class FibonacciRange {
      * 
      */
     
+    static void buildfib(int start, int finish) {
+        
+    }
+    
     static boolean isfib(int num) {
         /* This solution is naive. We iterate the radix sizes
          * for the fibonacci numbers. A radix=1 means we
