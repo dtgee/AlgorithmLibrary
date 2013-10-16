@@ -16,9 +16,42 @@ public class TwoSortedMedians {
      * 
      */
     
-    
+    static int naivemedian(int[] arr1, int[] arr2) {
+        int m = 0;
+        int n = 0;
+        int med_index = (arr1.length+arr2.length)/2;
+        while (m < arr1.length && n < arr2.length) {
+            if (arr1[m] <= arr2[n]) {
+                m++;
+                if (m+n==med_index) {
+                    return arr1[m];
+                }
+            } else if (arr2[n] < arr1[m]) {
+                n++;
+                if (m+n==med_index) {
+                    return arr2[n];
+                }
+            }
+        }
+        while (m < arr1.length) {
+            m++;
+            if (m+n==med_index) {
+                return arr1[m];
+            }
+        }
+        while (n < arr2.length) {
+            n++;
+            if (m+n==med_index) {
+                return arr2[n];
+            }
+        }
+        return -1;
+    }
     
     public static void main(String[] args) {
-        
+        int[] arr1 = {2, 3, 4, 10, 100, 200};
+        int[] arr2= {8, 20, 40, 80, 160, 1000, 2000};
+        int median = naivemedian(arr1, arr2);
+        System.out.println(median);
     }
 }
