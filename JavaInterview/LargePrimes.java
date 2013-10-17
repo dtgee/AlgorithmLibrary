@@ -29,7 +29,6 @@ public class LargePrimes {
             for (int j = i; j <= input; j += i)
                 map.put(j, true);
         }
-
         System.out.println(primes.toString());
     }
 }
