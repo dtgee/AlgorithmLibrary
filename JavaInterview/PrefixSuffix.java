@@ -1,5 +1,6 @@
 package JavaInterview;
 
+
 public class PrefixSuffix {
     /*
      * Given two String, s1 and s2. to find the longest 
@@ -7,24 +8,27 @@ public class PrefixSuffix {
      * suffix of s2.
      */
     
-    static int[] presuf(String s1, String s2) {
-        for (int i=0; i<s1.length(); i++) {
-            for (int j=s2.length()-1; j>-0; j--) {
-                if (s1.charAt(i) != s2.charAt(j)) {
-                    return new int[] {i, j};
-                   
+    static String presuf(String s1, String s2) {
+        for (int i=0; i<s2.length(); i++) {
+            boolean pass = true;
+            int width = s2.length()-i-1;
+            for (int j=0; (j<s1.length()) && (width>0); j++) {
+                if (s1.charAt(j) != s2.charAt(i)) {
+                    pass = false;
+                    continue;
                 }
+                width--;
             }
+            if (pass && s1.charAt(0) == s2.charAt(i)) 
+                return s2.substring(i);   
         }
-        // Entire words match..
-        return new int[] {s1.length()-1, s2.length()-1};
+        return "";
     }
     
     public static void main(String[] args) {
         String s1 = "lucas ou-yang";
-        String s2 = "kdsfjlu";
-        int[] res = presuf(s1, s2);
-
-        System.out.println(s1.substring(0, res[0]-1));
+        String s2 = "kdsfjlcul";
+        String s3 = "gnay-uo sacul";
+        System.out.println(presuf("lucas", "alanlu"));
     }
 }
