@@ -7,7 +7,6 @@ public class RealnumToBinary {
      * can not be represented in 32 characters, print ERROR.
      */
     public static void main(String[] args) {
-        double r = 0.72;
         
     }
 }

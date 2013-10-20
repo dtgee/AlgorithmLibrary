@@ -19,18 +19,25 @@ public class TwoSortedMedians {
     static int naivemedian(int[] arr1, int[] arr2) {
         int m = 0;
         int n = 0;
-        int med_index = (arr1.length+arr2.length)/2;
+        int med_index = ((arr1.length+arr2.length)/2);
+        boolean isodd = ((arr1.length+arr2.length)%2 == 1);
+        int prev = 0;
+        
         while (m < arr1.length && n < arr2.length) {
             if (arr1[m] <= arr2[n]) {
                 m++;
                 if (m+n==med_index) {
-                    return arr1[m];
+                    if (isodd)
+                        return arr1[m];
+
                 }
+                prev = arr1[m];
             } else if (arr2[n] < arr1[m]) {
                 n++;
                 if (m+n==med_index) {
                     return arr2[n];
                 }
+                prev = arr2[n];
             }
         }
         while (m < arr1.length) {

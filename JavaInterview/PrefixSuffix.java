@@ -26,9 +26,6 @@ public class PrefixSuffix {
     }
     
     public static void main(String[] args) {
-        String s1 = "lucas ou-yang";
-        String s2 = "kdsfjlcul";
-        String s3 = "gnay-uo sacul";
         System.out.println(presuf("lucas", "alanlu"));
     }
 }
